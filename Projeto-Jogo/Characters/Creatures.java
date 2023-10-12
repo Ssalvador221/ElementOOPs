@@ -151,7 +151,20 @@ public abstract class Creatures {
         }
     }
 
-
+    public String atributesStats(Creatures creature) {
+        return String.format("" +
+                        "Nome da Criatura: %s\n" +
+                        "Elemento: %s\n" +
+                        "Pontos de Poder: %d\n" +
+                        "Pontos de Ataque: %d\n" +
+                        "Pontos de Defesa: %d\n" +
+                        "Pontos de Velocidade: %d\n" +
+                        "Pontos de Vida: %d\n" +
+                        "_", creature.getNome(), creature.getElemento(),
+                creature.getPoder(), creature.getAtaque(),
+                creature.getDefesa(), creature.getVelocidade(),
+                creature.getPontosDeVida());
+    }
 
     public abstract void ataqueElemental(Creatures criaturaAtaquente, Creatures criaturaDefensora);
     public abstract double fatorDanoCriaturas(Creatures criaturaAtaquente, Creatures criaturaDefensora);

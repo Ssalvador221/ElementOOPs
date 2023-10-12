@@ -1,6 +1,10 @@
 package Characters;
 
+import java.util.Random;
+
 public class StoneDev extends Creatures {
+
+    private Random rand;
 
     @Override
     public int elementalDamage(Creatures creatures) {
