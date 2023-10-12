@@ -23,7 +23,7 @@ public class BreezeHacker extends Creatures{
         CreaturesElements elementoAtacante = criaturaAtaquente.getElemento();
         CreaturesElements elementoDefensor = criaturaDefensora.getElemento();
         
-        double fatorDano = 1.0;
+        double fatorDano = 0;
 
         if(elementoAtacante == CreaturesElements.Ar){
             if(elementoDefensor == CreaturesElements.Ar){
@@ -45,15 +45,15 @@ public class BreezeHacker extends Creatures{
     public void ataqueElemental(Creatures criaturaAtaquente, Creatures criaturaDefensora){
 
         double fatorAtaque = fatorDanoCriaturas(criaturaAtaquente, criaturaDefensora);
+
         System.out.println(criaturaAtaquente.getNome() + " lançou um ataque elemental");
         System.out.println();
+
         defenderDano(criaturaAtaquente, criaturaDefensora, fatorAtaque);
         if(criaturaDefensora.getPontosDeVida() <= 0 ){
-            System.out.printf("Pontos de vida restante %d" + criaturaDefensora.getNome() + " : 0");
-            System.out.println();
+            System.out.println("Pontos de vida restante %d" + criaturaDefensora.getNome() + " : 0");
         }else{
-            System.out.printf("Pontos de vida restante %d" + criaturaDefensora.getNome() + ": " + criaturaDefensora.getPontosDeVida());
-            System.out.println();
+            System.out.println("Pontos de vida restante %d" + criaturaDefensora.getNome() + ": " + criaturaDefensora.getPontosDeVida());
         }
 
     }
