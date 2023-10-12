@@ -1,70 +1,166 @@
 
 package Characters;
-import java.util.Random;
 
-public abstract class  Creatures {
-    private final int poder; 
-    private final int ataque;
-    private final int defesa;
-    private final int velocidade;
-    private final int pontosDeVida;
-    private int totalVida;
+public abstract class Creatures {
+    private CreaturesName nome;
+	private CreaturesElements elemento;
+    private int poder; 
+    private int ataque;
+    private int defesa;
+    private int velocidade;
+    private int pontosDeVida;
+    private int totalVidaInicial;
 
     
     
     public Creatures() {
-        this.poder = getRandomValue(10, 30);
-        this.ataque = getRandomValue(5, 15);
-        this.defesa = getRandomValue(5, 15);
-        this.velocidade = getRandomValue(1, 10);
-        this.totalVida = getRandomValue(200, 400);
-        this.pontosDeVida = totalVida;
+        setNome(nome);
+        setElemento(elemento);
+        setPoder(poder);
+        setAtaque(ataque);
+        setDefesa(defesa);
+        setVelocidade(velocidade);
+        setPontosDeVida(pontosDeVida);
+        setTotalVidaInicial(totalVidaInicial);
+    }
 
+    public CreaturesName getNome() {
+        return nome;
     }
 
 
-    public static int getRandomValue(int valorMax, int valorMin){
-        Random rand = new Random();
-        return rand.nextInt(valorMax - valorMin + 1) + valorMin;
+    public void setNome(CreaturesName nome) {
+        this.nome = nome;
     }
 
-    
+
+
+    public CreaturesElements getElemento() {
+        return elemento;
+    }
+
+
+
+    public void setElemento(CreaturesElements elemento) {
+        this.elemento = elemento;
+    }
+
+
+
     public int getPoder() {
         return poder;
     }
+
+
+
+    public void setPoder(int poder) {
+        this.poder = poder;
+    }
+
+
 
     public int getAtaque() {
         return ataque;
     }
 
+
+
+    public void setAtaque(int ataque) {
+        this.ataque = ataque;
+    }
+
+
+
     public int getDefesa() {
         return defesa;
     }
+
+
+
+    public void setDefesa(int defesa) {
+        this.defesa = defesa;
+    }
+
+
 
     public int getVelocidade() {
         return velocidade;
     }
 
+
+
+    public void setVelocidade(int velocidade) {
+        this.velocidade = velocidade;
+    }
+
+
+
     public int getPontosDeVida() {
         return pontosDeVida;
     }
 
-    public void vidaPlayer() {
-        this.totalVida = this.pontosDeVida;
+
+
+    public void setPontosDeVida(int pontosDeVida) {
+        this.pontosDeVida = pontosDeVida;
     }
 
-    
-    public int attackPhysical(Creatures creatures){
-        return this.getPoder() * this.getAtaque() / creatures.getDefesa();
+
+
+    public int getTotalVidaInicial() {
+        return totalVidaInicial;
     }
 
-    public void damage(int dano){
-        this.totalVida -= dano;
+
+
+    public void setTotalVidaInicial(int totalVidaInicial) {
+        this.totalVidaInicial = totalVidaInicial;
     }
 
-    public abstract int elementalDamage(Creatures creatures);
+    public void defenderDano(Creatures criaturaAtacante, Creatures criaturaDefensora, double fatorAtaque){
+        
+        if(fatorAtaque == 0){
+            
+            int recebeDano = (criaturaAtacante.getPoder() * criaturaAtacante.getAtaque()) / criaturaDefensora.getDefesa();
+            
+            criaturaDefensora.setPontosDeVida(criaturaDefensora.getPontosDeVida() - recebeDano);
+        }else{
+            double recebeDano = fatorAtaque;
+            criaturaDefensora.setPontosDeVida((int) (criaturaDefensora.getPontosDeVida() - recebeDano));
+        }
 
-    public abstract String getEspeciePlayer();
+    }   
+
+
+    public void ataqueBasico(Creatures criaturaAtacante, Creatures criaturaDefensora){
+
+        int efetuaDano = (criaturaAtacante.getPoder() * criaturaAtacante.getAtaque()) / criaturaDefensora.getDefesa();
+
+        System.out.println(criaturaAtacante.getNome() + "realiza um Ataque Básico!");
+        
+
+        defenderDano(criaturaAtacante, criaturaDefensora, 0);
+        System.out.println("Dano causado: " + efetuaDano);
+
+        if(criaturaDefensora.getPontosDeVida() <= 0){
+            System.out.printf("Pontos de vida restante %d" + criaturaDefensora.getNome() + " : 0");
+            System.out.println();
+        }else{
+            System.out.printf("Pontos de vida restante %d" + criaturaDefensora.getNome() + ": " + criaturaDefensora.getPontosDeVida());
+            System.out.println();
+        }
+    }
+
+
+
+    public abstract void ataqueElemental(Creatures criaturaAtaquente, Creatures criaturaDefensora);
+    public abstract double fatorDanoCriaturas(Creatures criaturaAtaquente, Creatures criaturaDefensora);
+
+
+
+
+   
+
 
     
 }
