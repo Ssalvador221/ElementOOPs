@@ -166,8 +166,8 @@ public abstract class Creatures {
                 creature.getPontosDeVida());
     }
 
-    public abstract void ataqueElemental(Creatures criaturaAtaquente, Creatures criaturaDefensora);
-    public abstract double fatorDanoCriaturas(Creatures criaturaAtaquente, Creatures criaturaDefensora);
+    public abstract void ataqueElemental(Creatures criaturaAtacante, Creatures criaturaDefensora);
+    public abstract double fatorDanoCriaturas(Creatures criaturaAtacante, Creatures criaturaDefensora);
 
 
 

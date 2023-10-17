@@ -19,8 +19,8 @@ public class BreezeHacker extends Creatures{
 
 
     @Override
-	public double fatorDanoCriaturas(Creatures criaturaAtaquente, Creatures criaturaDefensora) {
-        CreaturesElements elementoAtacante = criaturaAtaquente.getElemento();
+	public double fatorDanoCriaturas(Creatures criaturaAtacante, Creatures criaturaDefensora) {
+        CreaturesElements elementoAtacante = criaturaAtacante.getElemento();
         CreaturesElements elementoDefensor = criaturaDefensora.getElemento();
         
         double fatorDano = 0;
@@ -37,19 +37,19 @@ public class BreezeHacker extends Creatures{
             }
         }  
 
-        return criaturaAtaquente.getPoder() * criaturaAtaquente.getAtaque() / criaturaDefensora.getDefesa() * fatorDano;
+        return criaturaAtacante.getPoder() * criaturaAtacante.getAtaque() / criaturaDefensora.getDefesa() * fatorDano;
     }
 
 
     @Override
-    public void ataqueElemental(Creatures criaturaAtaquente, Creatures criaturaDefensora){
+    public void ataqueElemental(Creatures criaturaAtacante, Creatures criaturaDefensora){
 
-        double fatorAtaque = fatorDanoCriaturas(criaturaAtaquente, criaturaDefensora);
+        double fatorAtaque = fatorDanoCriaturas(criaturaAtacante, criaturaDefensora);
 
-        System.out.println(criaturaAtaquente.getNome() + " lançou um ataque elemental");
+        System.out.println(criaturaAtacante.getNome() + " lançou um ataque elemental");
         System.out.println();
 
-        defenderDano(criaturaAtaquente, criaturaDefensora, fatorAtaque);
+        defenderDano(criaturaAtacante, criaturaDefensora, fatorAtaque);
         if(criaturaDefensora.getPontosDeVida() <= 0 ){
             System.out.println("Pontos de vida restante %d" + criaturaDefensora.getNome() + " : 0");
         }else{
