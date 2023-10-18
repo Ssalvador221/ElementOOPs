@@ -2,10 +2,10 @@ import Menu.MenuInicial;
 
 public class Arcade {
     public static void main(String[] args) {
-        int opcao = MenuInicial.menuNovoJogo();
+        int opcaoMenuInicial = MenuInicial.menuNovoJogo();
 
-        if (opcao == 1) {
-            System.out.println("BOAA RAPARIGA");
+        if (opcaoMenuInicial == 1) {
+            MenuInicial.selecionaCriatura();
         } else {
             System.out.println("-- Fechando o Programa --");
             System.exit(0);
