@@ -45,9 +45,9 @@ public class MenuInicial {
       System.out.print("Selecione uma das Opçoes Acima: ");
       opcao = opcaoSelecionada.nextInt();
 
-      valido = (opcao == 1) || (opcao == 2);
+      valido = (opcao > 0 && opcao < 6) ;
       if (!valido) {
-        System.out.println("Opcao invalida!");
+        System.out.println("Opcao invalida! Selecione uma nova opção!!!");
       }
     } while (!valido);
 
