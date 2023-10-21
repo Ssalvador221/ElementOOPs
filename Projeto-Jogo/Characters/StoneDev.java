@@ -4,16 +4,16 @@ import java.util.Random;
 
 public class StoneDev extends Creatures {
 
-    private Random rand;
 
     public StoneDev() {
+        Random random = new Random();
         setNome(CreaturesName.StoneDev);
         setElemento(CreaturesElements.Terra);
-        setPoder(rand.nextInt(21) + 10);
-        setAtaque(rand.nextInt(11) + 5);
-        setDefesa(rand.nextInt(11) + 5);
-        setVelocidade(rand.nextInt(10) + 1);
-        setPontosDeVida(rand.nextInt(201) + 200);
+        setPoder(random.nextInt(21) + 10);
+        setAtaque(random.nextInt(11) + 5);
+        setDefesa(random.nextInt(11) + 5);
+        setVelocidade(random.nextInt(10) + 1);
+        setPontosDeVida(random.nextInt(201) + 200);
         setTotalVidaInicial(getPontosDeVida());
     }
 

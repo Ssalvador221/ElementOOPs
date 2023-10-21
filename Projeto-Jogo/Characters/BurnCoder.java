@@ -3,16 +3,16 @@ package Characters;
 import java.util.Random;
 
 public class BurnCoder extends Creatures {
-    private Random rand;
 
     public BurnCoder() {
+        Random random = new Random();
         setNome(CreaturesName.BurnCoder);
         setElemento(CreaturesElements.Fogo);
-        setPoder(rand.nextInt(21) + 10);
-        setAtaque(rand.nextInt(11) + 5);
-        setDefesa(rand.nextInt(11) + 5);
-        setVelocidade(rand.nextInt(10) + 1);
-        setPontosDeVida(rand.nextInt(201) + 200);
+        setPoder(random.nextInt(21) + 10);
+        setAtaque(random.nextInt(11) + 5);
+        setDefesa(random.nextInt(11) + 5);
+        setVelocidade(random.nextInt(10) + 1);
+        setPontosDeVida(random.nextInt(201) + 200);
         setTotalVidaInicial(getPontosDeVida());
     }
 

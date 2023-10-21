@@ -10,8 +10,6 @@ public abstract class Creatures {
     private int velocidade;
     private int pontosDeVida;
     private int totalVidaInicial;
-
-    
     
     public Creatures() {
         setNome(nome);
@@ -28,90 +26,61 @@ public abstract class Creatures {
         return nome;
     }
 
-
     public void setNome(CreaturesName nome) {
         this.nome = nome;
     }
-
-
 
     public CreaturesElements getElemento() {
         return elemento;
     }
 
-
-
     public void setElemento(CreaturesElements elemento) {
         this.elemento = elemento;
     }
-
-
 
     public int getPoder() {
         return poder;
     }
 
-
-
     public void setPoder(int poder) {
         this.poder = poder;
     }
-
-
 
     public int getAtaque() {
         return ataque;
     }
 
-
-
     public void setAtaque(int ataque) {
         this.ataque = ataque;
     }
-
-
 
     public int getDefesa() {
         return defesa;
     }
 
-
-
     public void setDefesa(int defesa) {
         this.defesa = defesa;
     }
-
-
 
     public int getVelocidade() {
         return velocidade;
     }
 
-
-
     public void setVelocidade(int velocidade) {
         this.velocidade = velocidade;
     }
-
-
 
     public int getPontosDeVida() {
         return pontosDeVida;
     }
 
-
-
     public void setPontosDeVida(int pontosDeVida) {
         this.pontosDeVida = pontosDeVida;
     }
 
-
-
     public int getTotalVidaInicial() {
         return totalVidaInicial;
     }
-
-
 
     public void setTotalVidaInicial(int totalVidaInicial) {
         this.totalVidaInicial = totalVidaInicial;
@@ -143,10 +112,10 @@ public abstract class Creatures {
         System.out.println("Dano causado: " + efetuaDano);
 
         if(criaturaDefensora.getPontosDeVida() <= 0){
-            System.out.printf("Pontos de vida restante %d" + criaturaDefensora.getNome() + " : 0");
+            System.out.println("Pontos de vida restantes:" + criaturaDefensora.getPontosDeVida() + " : 0");
             System.out.println();
         }else{
-            System.out.printf("Pontos de vida restante %d" + criaturaDefensora.getNome() + ": " + criaturaDefensora.getPontosDeVida());
+            System.out.println("Pontos de vida restantes:" + criaturaDefensora.getNome() + ": " + criaturaDefensora.getPontosDeVida());
             System.out.println();
         }
     }
