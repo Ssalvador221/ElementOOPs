@@ -5,12 +5,12 @@ public class MenuInicial extends MenuMain {
     @Override
     public void modelosMenu() {
       do {
-        System.out.println("╔═══════════════════════════════════════╗");
-        System.out.println("║            ◄ ElementOOPs ►            ║");
-        System.out.println("╠═══════════════════════════════════════╣");
-        System.out.println("║  Selecione 1 para : Novo Jogo         ║");
-        System.out.println("║  Selecione 2 para : Sair do Programa  ║");
-        System.out.println("╚═══════════════════════════════════════╝");
+        System.out.println("#########################################");
+        System.out.println("#          Bem-Vindo ao ElementOOPs     #");
+        System.out.println("#                                       #");
+        System.out.println("#  Selecione 1 para : Novo Jogo         #");
+        System.out.println("#  Selecione 2 para : Sair do Programa  #");
+        System.out.println("#########################################");
         System.out.print("Selecione uma das Opçoes Acima:");
 
         opcao = scan.nextInt();

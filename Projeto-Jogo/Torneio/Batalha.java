@@ -5,7 +5,7 @@ import Menu.MenuInicial;
 import Menu.MenuCreatures;
 import Menu.MenuAtaques;
 
-import java.awt.*;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -52,22 +52,20 @@ public class Batalha {
           creature[3] = new BurnCoder();
           break;
         case 5:
-          System.out.println("╔═══════════════════════════════════════╗");
-          System.out.println("║           Deseja realmente sair?      ║");
-          System.out.println("╠═══════════════════════════════════════╣");
-          System.out.println("║                1 - Sim                ║");
-          System.out.println("║                2 - Não                ║");
-          System.out.println("╚═══════════════════════════════════════╝");
+          System.out.println("#########################################");
+          System.out.println("#           Você realmente sair?        #");
+          System.out.println("#                                       #");
+          System.out.println("#                1 - Sim                #");
+          System.out.println("#                2 - Não                #");
+          System.out.println("#########################################");
 
           int confirmacao = scanner.nextInt();
           if (confirmacao == 1) {
             System.out.println("Processando..");
-            tempoDeEspera();
             System.out.println("Jogo finalizado!");
             System.exit(0);
           } else {
             System.out.println("Continuando o programa..");
-            tempoDeEspera();
             selecaoCriatura();
             break;
           }
@@ -80,11 +78,23 @@ public class Batalha {
   }
 
   public void iniciarBatalha() {
-    System.out.println("Criatura Selecionada:");
-    System.out.println(creature[0].getNome());
-    tempoDeEspera();
+    System.out.println();
+    System.out.println("Criatura Selecionada: " + creature[0].getNome());
+    System.out.println("-- Elemento: " + creature[0].getElemento());
+    System.out.println("-- Poder: " + creature[0].getPoder());
+    System.out.println("-- Pontos de vida inicial: " + creature[0].getTotalVidaInicial());
+    System.out.println("-- Velocidade total: " + creature[0].getVelocidade());
+    
+    
+    System.out.println();
     System.out.println(criaturaAdversaria + "º Oponente: ");
-    System.out.println(creature[criaturaAdversaria].getNome());
+    System.out.println("Criatura Adversaria: " + creature[criaturaAdversaria].getNome());
+    System.out.println("-- Elemento: " + creature[criaturaAdversaria].getElemento());
+    System.out.println("-- Poder: " + creature[criaturaAdversaria].getPoder());
+    System.out.println("-- Pontos de vida inicial: " + creature[criaturaAdversaria].getTotalVidaInicial());
+    System.out.println("-- Velocidade total: " + creature[criaturaAdversaria].getVelocidade());
+    System.out.println();
+
     System.out.println("1. iniciar a batalha? \n" +
         "2. Sair do programa");
     int selecao = this.scanner.nextInt();
@@ -102,12 +112,10 @@ public class Batalha {
           int confirmacao = scanner.nextInt();
           if (confirmacao == 1) {
             System.out.println("Processando..");
-            tempoDeEspera();
             System.out.println("Jogo finalizado!");
             System.exit(0);
           } else {
             System.out.println("Continuando o programa.");
-            tempoDeEspera();
             iniciarBatalha();
             break;
           }
@@ -160,7 +168,6 @@ public class Batalha {
         int confirmacao = scanner.nextInt();
         if (confirmacao == 1) {
           System.out.println("Processando..");
-          tempoDeEspera();
           System.out.println("Jogo finalizado!");
           System.exit(0);
         } else {
@@ -225,15 +232,5 @@ public class Batalha {
     }
   }
 
-  public void tempoDeEspera() {
-    try {
-      Thread.sleep(1000);
-    } catch (InterruptedException e) {
-      System.out.println("Ocorreu um erro inesperado." +
-          "Reinicializando o programa...");
-      tempoDeEspera();
-      MenuInicial menuInicial = new MenuInicial();
-      menuInicial.modelosMenu();
-    }
-  }
+
 }
