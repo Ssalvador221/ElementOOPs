@@ -44,11 +44,12 @@ public class BurnCoder extends Creatures {
         double fatorAtaque = fatorDanoCriaturas(criaturaAtacante, criaturaDefensora);
 
         System.out.println(criaturaAtacante.getNome() + " lançou um ataque elemental");
+        System.out.println("Dano causado: " + String.format("%.2f", fatorAtaque));
         System.out.println();
 
         defenderDano(criaturaAtacante, criaturaDefensora, fatorAtaque);
         if (criaturaDefensora.getPontosDeVida() <= 0) {
-            System.out.println("Pontos de vida restante " + criaturaDefensora.getNome() + " : 0");
+            System.out.println("Pontos de vida restante " + criaturaDefensora.getNome() + ": 0");
         } else {
             System.out.println("Pontos de vida restante " + criaturaDefensora.getNome() + ": " + criaturaDefensora.getPontosDeVida());
         }

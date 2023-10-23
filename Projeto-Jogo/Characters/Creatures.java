@@ -105,17 +105,17 @@ public abstract class Creatures {
 
         int efetuaDano = (criaturaAtacante.getPoder() * criaturaAtacante.getAtaque()) / criaturaDefensora.getDefesa();
 
-        System.out.println(criaturaAtacante.getNome() + "realiza um Ataque Básico!");
+        System.out.println(criaturaAtacante.getNome() + " realiza um Ataque Básico!");
         
 
         defenderDano(criaturaAtacante, criaturaDefensora, 0);
         System.out.println("Dano causado: " + efetuaDano);
 
         if(criaturaDefensora.getPontosDeVida() <= 0){
-            System.out.println("Pontos de vida restantes:" + criaturaDefensora.getPontosDeVida() + " : 0");
+            System.out.println("Pontos de vida restantes " + criaturaDefensora.getPontosDeVida() + ": 0");
             System.out.println();
         }else{
-            System.out.println("Pontos de vida restantes:" + criaturaDefensora.getNome() + ": " + criaturaDefensora.getPontosDeVida());
+            System.out.println("Pontos de vida restantes " + criaturaDefensora.getNome() + ": " + criaturaDefensora.getPontosDeVida());
             System.out.println();
         }
     }
@@ -128,7 +128,7 @@ public abstract class Creatures {
                         "Pontos de Ataque: %d\n" +
                         "Pontos de Defesa: %d\n" +
                         "Pontos de Velocidade: %d\n" +
-                        "Pontos de Vida: %d\n" +
+                        "Pontos totais de Vida: %d\n" +
                         "_", creature.getNome(), creature.getElemento(),
                 creature.getPoder(), creature.getAtaque(),
                 creature.getDefesa(), creature.getVelocidade(),
@@ -137,12 +137,5 @@ public abstract class Creatures {
 
     public abstract void ataqueElemental(Creatures criaturaAtacante, Creatures criaturaDefensora);
     public abstract double fatorDanoCriaturas(Creatures criaturaAtacante, Creatures criaturaDefensora);
-
-
-
-
-   
-
-
     
 }

@@ -60,7 +60,6 @@ public class Batalha {
 
           int confirmacao = scanner.nextInt();
           if (confirmacao == 1) {
-            System.out.println("Processando..");
             System.out.println("Jogo finalizado!");
             System.exit(0);
           } else {
@@ -78,20 +77,13 @@ public class Batalha {
 
   public void iniciarBatalha() {
     System.out.println();
-    System.out.println("Criatura Selecionada: " + creature[0].getNome());
-    System.out.println("-- Elemento: " + creature[0].getElemento());
-    System.out.println("-- Poder: " + creature[0].getPoder());
-    System.out.println("-- Pontos de vida inicial: " + creature[0].getTotalVidaInicial());
-    System.out.println("-- Velocidade total: " + creature[0].getVelocidade());
+    System.out.println("Descrição da Criatura selecionada: ");
+    System.out.println(creature[0].atributesStats(creature[0]));
     
     
     System.out.println();
-    System.out.println(criaturaAdversaria + "º Oponente: ");
-    System.out.println("Criatura Adversaria: " + creature[criaturaAdversaria].getNome());
-    System.out.println("-- Elemento: " + creature[criaturaAdversaria].getElemento());
-    System.out.println("-- Poder: " + creature[criaturaAdversaria].getPoder());
-    System.out.println("-- Pontos de vida inicial: " + creature[criaturaAdversaria].getTotalVidaInicial());
-    System.out.println("-- Velocidade total: " + creature[criaturaAdversaria].getVelocidade());
+    System.out.println(criaturaAdversaria + "º Oponente caracteristicas: ");
+    System.out.println(creature[criaturaAdversaria].atributesStats(creature[criaturaAdversaria]));
     System.out.println();
 
     System.out.println("1. iniciar a batalha? \n" +
@@ -110,7 +102,6 @@ public class Batalha {
 
           int confirmacao = scanner.nextInt();
           if (confirmacao == 1) {
-            System.out.println("Processando..");
             System.out.println("Jogo finalizado!");
             System.exit(0);
           } else {
@@ -166,7 +157,6 @@ public class Batalha {
 
         int confirmacao = scanner.nextInt();
         if (confirmacao == 1) {
-          System.out.println("Processando..");
           System.out.println("Jogo finalizado!");
           System.exit(0);
         } else {
@@ -225,7 +215,6 @@ public class Batalha {
   public void continuarBatalha() {
     if (statusDaBatalha() == false) {
       this.batalhar();
-
     } else {
       this.continuarTorneio();
     }

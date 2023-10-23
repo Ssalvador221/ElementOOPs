@@ -46,6 +46,7 @@ public class WaveNerd extends Creatures {
         double fatorAtaque = fatorDanoCriaturas(criaturaAtacante, criaturaDefensora);
 
         System.out.println(criaturaAtacante.getNome() + " lançou um ataque elemental");
+        System.out.println("Dano causado: " + String.format("%.2f", fatorAtaque));
         System.out.println();
 
         defenderDano(criaturaAtacante, criaturaDefensora, fatorAtaque);
