@@ -1,7 +1,6 @@
 package Torneio;
 
 import Characters.*;
-import Menu.MenuInicial;
 import Menu.MenuCreatures;
 import Menu.MenuAtaques;
 
